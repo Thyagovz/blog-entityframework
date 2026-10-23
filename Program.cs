@@ -1,4 +1,5 @@
 ﻿using Blog.Data;
+using Blog.Models;
 
 namespace Blog;
 
@@ -8,7 +9,9 @@ class Program
     {
         using(var context = new BlogDataContext())
         {
-            
+            var tag = new Tag {Name="JAVASCRIPT", Slug = "javascript"};
+            context.Tags.Add(tag);
+            context.SaveChanges();
         }
     }
 }
