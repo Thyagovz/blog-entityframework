@@ -1,16 +1,9 @@
 namespace Blog.Models;
 
-// [Id].INT.NOT.NULL .IDENTITY(1,1),
-// [CategoryId] .INT .NOT . NULL,
-// [Author Id] .INT .NOT .NULL,
-// [Title] . VARCHAR(160) .NOT .NULL,
-// [Summary ] . VARCHAR (255) .NOT . NULL,
-// [Body] . TEXT . NOT . NULL,
-// [Slug] . VARCHAR(80) .NOT .NULL,
-// [CreateDate] .DATETIME . NOT . NULL . DEFAULT(GETDATE()),
-// [LastUpdateDate] .DATETIME . NOT . NULL . DEFAULT(GETDATE()),
-
-
+// Representa uma publicação do blog. Os comentários abaixo registram
+// o formato esperado na tabela correspondente do banco de dados.
+// Id e as chaves estrangeiras são inteiros; as datas devem ter valor padrão
+// definido pelo banco (GETDATE) quando o registro for criado ou atualizado.
 public class Post
 {
    public int Id { get; set; }

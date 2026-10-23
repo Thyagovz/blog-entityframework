@@ -1,12 +1,7 @@
 namespace Blog.Models;
 
-// [Id] INT NOT NULL IDENTITY(1, 1),
-// [Name] NVARCHAR(80) NOT NULL,
-// [Email] VARCHAR(200) NOT NULL,
-// [PasswordHash] VARCHAR(255) NOT NULL,
-// [Bio] TEXT NOT NULL,
-// [Image] VARCHAR(2000) NOT NULL,
-// [Slug] VARCHAR(80) NOT NULL,
+// Representa um usuário do blog. PasswordHash deve armazenar somente
+// o hash da senha, nunca a senha original.
 public class User
 {
     public int Id { get; set; }
