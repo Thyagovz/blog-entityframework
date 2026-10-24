@@ -1,10 +1,22 @@
-namespace Blog.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-// Representa uma função/permissão atribuída a usuários.
-// O Slug deve ser único para identificar a função de forma estável.
+[Table("Role")]
 public class Role
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
+
+    [Required]
+    [MinLength(3)]
+    [MaxLength(80)]
+    [Column("Name", TypeName = "NVARCHAR")]
     public string Name { get; set; } = string.Empty;
+
+    [Required]
+    [MinLength(3)]
+    [MaxLength(80)]
+    [Column("Slug", TypeName = "VARCHAR")]
     public string Slug { get; set; } = string.Empty;
 }
