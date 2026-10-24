@@ -1,5 +1,6 @@
 ﻿using Blog.Data;
 using Blog.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blog;
 
@@ -9,37 +10,36 @@ class Program
     {
         using (var context = new BlogDataContext())
         {
-            // Exemplo de inclusão: cria uma tag e persiste o registro no banco.
-            // var tag = new Tag { Name = "JAVASCRIPT", Slug = "javascript" };
-            // context.Tags.Add(tag);
-            // context.SaveChanges();
-
-            // Exemplo de consulta e atualização: localiza a tag pelo Id
-            // e altera seus dados somente quando o registro existe.
-            // var tag = context.Tags.FirstOrDefault(x => x.Id == 5);
-            // if (tag is not null)
-            // {
-            //     tag.Name = ".NET";
-            //     tag.Slug = "dotnet";
-            //     context.Update(tag);
-            //     context.SaveChanges();
-            // }
-
-            // Exemplo de exclusão: localiza a tag e a remove do banco
-            // somente quando a consulta retorna um registro.
-            // var tag = context.Tags.FirstOrDefault(x => x.Id == 5);
-            // if (tag is not null)
-            // {
-            //     context.Remove(tag);
-            //     context.SaveChanges();
-            // }
-
-            var tags = context.Tags;
-
-            foreach (var tag in tags)
+            var user = new User
             {
-                Console.WriteLine(tag.Name);
-            }
+                Name = "Thyago Euclides",
+                Slug = "thyagoeuclides",
+                Email = "thyagomvp@euclides.io",
+                Bio = "9x Microsoft MVP",
+                Image = "https://thyago.io",
+                PasswordHash = "123098457"
+            };
+
+            var category = new Category
+            {
+                Name = "Backend",
+                Slug = "backend"
+            };
+
+            var post = new Post
+            {
+                Author = user,
+                Category = category,
+                Body = "<p>Hello world</p>",
+                Slug = "comecando-com-ef-core",
+                Summary = "Neste artigo vamos aprender EF core",
+                Title = "Começando com EF Core",
+                CreateDate = DateTime.Now,
+                LastUpdateDate = DateTime.Now,
+            };
+
+            context.Posts.Add(post);
+            context.SaveChanges();
         }
     }
 }
