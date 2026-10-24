@@ -36,5 +36,7 @@ public class BlogDataContext : DbContext
 
         // Configura o Entity Framework Core para trabalhar com SQL Server.
         options.UseSqlServer(connectionString);
+
+        options.LogTo(Console.WriteLine);
     }
 }
