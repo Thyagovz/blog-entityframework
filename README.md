@@ -62,15 +62,7 @@ O fluxo atual em `Program.cs` demonstra como:
 ## Experiência interativa e escopo
 
 Esta versão ainda não contém uma camada frontend nem bibliotecas de
-renderização no browser. Portanto, **animações baseadas em scroll,
-renderização 3D, vídeo como textura, gerenciamento de estado de interface e
-interações em tempo real não estão implementados atualmente**.
-
-Esses recursos podem compor uma próxima etapa de creative development sobre
-uma API, mas não seriam tecnologias honestamente atribuíveis a este repositório
-sem dependências como Three.js/WebGL, uma biblioteca de animação, um cliente
-de estado ou transporte realtime. O README mantém essa distinção para que a
-descrição técnica corresponda ao código efetivamente versionado.
+renderização no browser.
 
 ## Requisitos
 
